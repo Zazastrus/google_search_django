@@ -1,0 +1,22 @@
+{% extends "search/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Google Search
+{% endblock%}
+
+{% block body %}
+
+    <ul>
+        <li><a href="{% url 'search:advanced' %}">Advanced</a></li>
+        <li><a href="{% url 'search:image' %}">Images</a></li>
+    </ul>
+    <form action="https://www.google.com/search" method="get">
+        <img src="{% static 'search/google.png' %}" alt="Google" width="272">
+        <input id="search" autocomplete="off" autofocus type="text" name="q">
+        <br></br>
+        <button type="submit" value="Google Search">Google Search</button>
+        <button type="submit" name="btnI">I'm Feeling Lucky</button>
+    </form>
+
+{% endblock %}

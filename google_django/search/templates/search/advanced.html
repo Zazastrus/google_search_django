@@ -1,0 +1,38 @@
+{% extends "search/layout.html" %}
+
+{% block title %}
+    Google Advanced
+{% endblock%}
+
+{% block body %}
+    <ul>
+        <li><a href="{% url 'search:index' %}">Search</a></li>
+    </ul>
+    <form class="left" action="https://www.google.com/search" method="get">
+        <div>
+            <label for="one">all this words:</label>
+            <input autocomplete="off" autofocus type="text" id="one" name="as_q">
+        </div>
+        <br>
+        <div>
+            <label for="two">this exact word or phrase:</label>
+            <input autocomplete="off" autofocus type="text" id="two" name="as_epq">
+        </div>
+        <br>
+        <div>
+            <label for="three">any of this words:</label>
+            <input autocomplete="off" autofocus type="text" id="three" name="as_oq">
+        </div>
+        <br>
+        <div>
+            <label for="four">none of this words:</label>
+            <input autocomplete="off" autofocus type="text" id="four" name="as_eq">
+        </div>
+        <br><br>
+        <div>
+            <label for="btn"></label>
+            <button id="btn" type="submit" value="advanced search">Advanced Search</button>
+        </div>
+    </form>
+
+{% endblock %}

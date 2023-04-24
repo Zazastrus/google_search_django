@@ -1,0 +1,20 @@
+{% extends "search/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Google Image
+{% endblock%}
+
+{% block body %}
+
+    <ul>
+        <li><a href="{% url 'search:index' %}">Search</a></li>
+    </ul>
+    <form action="https://images.google.com/images" method="get">
+        <img src="{% static 'search/google_img.png' %}" alt="Google" width="272">
+        <input id="search_img" autocomplete="off" autofocus type="text" name="q">
+        <br></br>
+        <button type="submit">Search</button>
+    </form>
+
+{% endblock %}
